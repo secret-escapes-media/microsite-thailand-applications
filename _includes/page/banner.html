@@ -1,0 +1,80 @@
+
+<div class="banner">
+
+  <div class="banner__left">
+    <div class="row row--match-height">
+      <div class="col col--6">
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-1.jpg);"></div>
+        <div class="space--lg"></div>
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-2.jpg);"></div>
+      </div>
+      <div class="col col--6">
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-3.jpg);"></div>
+        <div class="space--lg"></div>
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-4.jpg);"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="banner__center">
+
+    <div class="banner__video rounded--xxxl">
+      <div class="banner__video-poster js-play-video" style="background-image: url({{site.img}}/{{page.id}}/video.jpg);">
+        <div class="banner__video-play"></div>
+      </div>
+      <div class="banner__video-iframe">
+        <div id="ytPlayer"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="banner__right">
+    <div class="row row--match-height">
+      <div class="col col--6">
+        <div class="img img--1-2 img--tall rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-5.jpg);"></div>
+      </div>
+      <div class="col col--6">
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-6.jpg);"></div>
+        <div class="space--lg"></div>
+        <div class="img img--1-1 banner__image rounded--xxxl" style="background-image: url({{site.img}}/{{page.id}}/banner-7.jpg);"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<script>
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var ytPlayer;
+  function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('ytPlayer', {
+      height: '100%',
+      width: '100%',
+      videoId: 'BZdl1j5LuMI',
+      playerVars: {
+        rel: 0,
+        modestbranding: 1
+      }
+    });
+  }
+
+  function stopVideo() {
+    ytPlayer.stopVideo();
+  }
+
+</script>

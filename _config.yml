@@ -1,0 +1,24 @@
+# Site settings
+title: Secret Escapes
+locale: uk
+partner:
+  name: Thailand
+  link: "#client-name"
+
+description: As restrictions begin to ease, our thoughts are turning to travel, and while that might not mean today, we're hoping it will be very soon. In preparation for that day, we've reach out to our hotel partners, colleagues and friends to find out what they've missed most, and what they're doing in preparation to welcome you back safely.
+
+# file paths
+url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
+baseurl: "/uk/2020/thailand-lp" # the subpath of your site, e.g. /blog/
+img:     "/uk/2020/thailand-lp/_assets/img"
+css:     "/uk/2020/thailand-lp/_assets/css"
+js:      "/uk/2020/thailand-lp/_assets/js"
+
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, package.json, package-lock.json, js/script.js]
+keep_files: [_assets]
+sass:
+    sass_dir: css
+    style: compressed

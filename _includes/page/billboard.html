@@ -1,0 +1,12 @@
+<div class="bg--white rounded--sm depth--sm">
+  <div class="img img--1-1 img--lg-16-9 img--xxl-3-1" style="background-image: url('{{site.img}}/{{page.id}}/banner.jpg')"></div>
+  <div class="boxpad--xl text--center">
+    <div class="width width--xl">
+
+    {% if page.billboard.suptitle %}<div class="h--sub">{{suptitle}}</div>{% endif %}
+    {{page.billboard.title}}
+    {% if page.billboard.subtitle %}<div class="h--sub h--sub--sm">{{page.billboard.subtitle}}</div>{% endif %}
+    {{page.billboard.content}}
+    </div>
+  </div>
+</div>

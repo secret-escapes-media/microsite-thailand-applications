@@ -1,0 +1,28 @@
+#####################################
+#
+#  OPTIONS
+#
+#    pages:
+#      - id: overview         # (shows on specific page)
+#      - id: all              # (shows on all pages)
+#      - layout: group-page   # (shows on specific layout)
+#
+#   # if option is not set, defaul is standard html content
+#   type:
+#     youtube     # loads in a different thing
+#     series      # this is a parent container that has contents
+#
+#   # when included, an extra html is used for a full width image
+#   image: 'example-image-name.jpg'
+#
+#
+#
+#####################################
+
+
+- id: video
+  type: youtube
+  pages:
+    - id: all
+  youtube-id: jVktupBOcv0
+

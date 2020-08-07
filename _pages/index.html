@@ -1,0 +1,142 @@
+---
+layout: default
+id: overview
+locale: uk
+
+
+title: Thailand | Real people, real journeys
+
+
+intro: >
+  <p class="p--xxxxl text--bold">With so many missed travel opportunities and lost time with loved ones, we knew we had to kick this off with a trip of a lifetime.</p>
+  <p class="p--xxxl">So we want to send you on the ultimate Secret Escape to Thailand. This escape will be the stuff of dreams; with luxury stays and diverse experiences that showcase this incredible destination.</p>
+
+
+journey:
+
+  - title: What excites you about Thailand?
+    content: Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+  - title: Who have you missed travelling with the most?
+    content: Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+  - title: Why are they the perfect partner for this trip of a lifetime?
+    content: Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+
+form-cta:
+  title: Thailand is waiting
+  content: >
+    <p class="p--xxxl">Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Etiam porta sem malesuada magna mollis euismod.</p>
+
+form:
+  id: comp
+  post-url: "#getFormUrl"
+  expiry-date: 2050-01-01
+  fields:
+    - id: name
+      type: text
+      label: Name
+      required: true
+    - id: email
+      type: email
+      label: Email
+      required: true
+    - id: qualify
+      type: radio
+      label: Are you a UK resident and over the age of 18?
+      required: true
+      options:
+        - id: qualify-true
+          label: 'Yes'
+          value: 'yes'
+        - id: qualify-false
+          label: 'No'
+          value: 'no'
+          invalid: true
+  submit: Upload video & complete entry
+  terms: >
+    By submitting your entry, you agree to the <a href="#" class="js-open-modal link--underlined" data-open-modal="competition-terms">terms and conditions</a> of this competition
+
+---
+
+
+{% include nav/header.html %}
+<div class="page-bg"></div>
+
+
+<div class="container container--xxl vpad--xxl text--center">
+  <div class="title-svg"></div>
+</div>
+
+{% include page/banner.html %}
+
+<div class="container container--xxl vpad--xxl text--center">
+  {{page.intro}}
+
+  <div class="space--sm"></div>
+
+  <hr class="hr--center">
+  <h4 class="h h--md">Just tell us:</h4>
+    <div class="space--lg"></div>
+
+  <div class="journey__before"></div>
+  <div class="journey">
+    {% for item in page.journey %}
+    <div class="step{% cycle '', ' step--swap'%}">
+      <div class="step__img">
+        <div class="step__img-icon" style="background-image: url({{site.img}}/{{page.id}}/step-{{forloop.index}}.jpg);"></div>
+      </div>
+      <div class="step__text">
+        <h4 class="h h--sm">{{item.title}}</h4>
+        <p class="p--xl">{{item.content}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="journey__after"></div>
+
+  <div class="space--lg"></div>
+
+  <div class="text--center">
+    <h4 class="h h--lg">{{page.form-cta.title}}</h4>
+    {{page.form-cta.content}}
+    <div class="space--md"></div>
+
+    <div id="entry-form" class="vpad--md">
+      {% assign form = page.form %}
+      <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
+        {% include form/messages.html %}
+        <div class="form__content width width--md">
+          {% for item in form.fields %}
+            <div class="form__input js-form-input">
+              {% case item.type %}
+                {% when 'text' %}
+                  {% include form/text.html data=item %}
+                {% when 'text-long' %}
+                  {% include form/text-long.html data=item %}
+                {% when 'email' %}
+                  {% include form/email.html data=item %}
+                {% when 'radio' %}
+                  {% include form/radio.html data=item %}
+                {% when 'checkbox' %}
+                  {% include form/checkbox.html data=item %}
+                {% when 'select' %}
+                  {% include form/select.html data=item %}
+              {% endcase %}
+            </div>
+          {% endfor %}
+          <div class="space--sm"></div>
+          <p class="text--sm text--normal">{{form.terms}}</p>
+          <div class="space--sm"></div>
+          <button type="submit" class="btn" disabled>{{form.submit}}</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<div class="space--xxl"></div>
+
+
+{% include nav/footer.html %}

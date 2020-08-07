@@ -1,0 +1,120 @@
+// general styles for the project that wouldn't be a reuseable component
+
+.hideApp {
+  .fromApp & { display: none; }
+}
+
+.title-svg {
+  position: relative;
+  display: inline-block;
+  width: 75%;
+  max-width: 640px;
+  background-image: url('../img/title.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 32.38967527%;
+  }
+}
+
+.page-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background-image: url('../img/overview/bg.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.journey {
+  @include bp($xxl) {
+    background-image: url('../img/overview/journey-line.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 140px 0;
+    position: relative;
+  }
+  &__before,
+  &__after {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+    }
+  }
+  &__before {
+    width: 60%;
+    max-width: 240px;
+    margin: auto;
+    margin-bottom: $s6;
+    background-image: url('../img/overview/journey-before.svg');
+    &:before { padding-top: 16.60649819%; }
+    @include bp($xxl) { margin-bottom: 0; }
+  }
+  &__after {
+    width: 60%;
+    max-width: 160px;
+    margin: auto;
+    margin-top: $s6;
+    background-image: url('../img/overview/journey-after.svg');
+    &:before { padding-top: 100%; }
+    @include bp($xxl) { margin-top: 0; }
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & + & {
+    padding-top: $s4;
+  }
+  @include bp($xxl) {
+    flex-direction: row;
+    &--swap { flex-direction: row-reverse; }
+  }
+
+  &__text,
+  &__img {
+    width: 100%;
+    max-width: $lg;
+  }
+  &__img {
+    max-width: $lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: $s2;
+    &-icon {
+      @include background-attributes;
+      border: 2px solid $white;
+      border-radius: 500px;
+      width: 200px;
+      height: 200px;
+    }
+    @include bp($xxl) {
+      padding-bottom: 0;
+      width: 40%;
+      height: 400px;
+    }
+  }
+  &__text {
+    text-align: center;
+    @include bp($xxl) {
+      width: 60%;
+      text-align: left;
+    }
+  }
+}

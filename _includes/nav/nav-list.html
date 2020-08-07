@@ -1,0 +1,7 @@
+{% assign locale = site.data.locale.[page.locale] %}
+<div class="{{include.block}}">
+  {% for link in locale.core-nav %}
+  <a class="{{include.block}}-link" href="{{link.link}}">{{link.label}}</a>
+  {% endfor %}
+  <!-- <a class="{{include.block}}-link is-current" href="{{ site.baseurl }}">{{ site.title }}</a> -->
+</div>

@@ -1,0 +1,126 @@
+// the title banner that appears at the top of every page. sometimes animated bgs
+
+.banner {
+  @include page-padding;
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+  overflow: hidden;
+  color: $white;
+
+  &__left,
+  &__right { display: none }
+  &__center {
+    @include transition;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include bp($xl){
+    &__left,
+    &__right {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20%;
+      min-width: 368px;
+      opacity: 1;
+      .video-playing & { opacity: 0.5; }
+    }
+    &__left { right: 50%; margin-right: 362px; }
+    &__right { left: 50%; margin-left: 362px; }
+    &__center {
+      position: relative;
+      z-index: 10;
+      margin: auto;
+      width: 50%;
+      min-width: 720px;
+      max-width: 960px;
+      @include page-padding;
+      .video-playing & { width: 75%; }
+    }
+  }
+
+  @include bp($xxxxl){
+    &__left,
+    &__right {
+      @include transition;
+      position: absolute;
+      width: 25%;
+      min-width: 25%;
+      margin: 0;
+    }
+    &__left { left: 0; right: auto; margin: 0; }
+    &__right { right: 0; left: auto; margin: 0; }
+    &__center {
+      position: relative;
+      margin: auto;
+      width: 50%;
+      // min-width: 50%;
+      max-width: 1080px;
+      .video-playing & { width: 100%; }
+    }
+  }
+
+  // positioned absolute within pre-sized frame. Allows for frame to manage responsive sizing and styling
+  &__video {
+    @include transition;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 56.25%;
+    }
+
+
+    &-iframe {
+      @include transition;
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      opacity: 0;
+      .video-playing & { opacity: 1; }
+    }
+    // poster = image overlay
+    &-poster {
+      cursor: pointer;
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include background-attributes;
+    }
+    &-play {
+      @include transition;
+      transform: scale(1);
+      width: 50%;
+      max-width: 240px;
+      background-image: url('../img/icons/play.svg');
+      @include background-attributes;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+      }
+    }
+    &-poster:hover &-play {
+      transform: scale(1.05);
+    }
+  }
+
+}
+
+
+
