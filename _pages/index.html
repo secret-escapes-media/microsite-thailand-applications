@@ -14,9 +14,12 @@ intro: >
 
 journey:
 
-  - title: Discover amazing Thailand
+  - title: Your adventure begins in Bangkok
     content: >
       <p>There’s a reason why Thailand is such a well-loved travel destination, but don’t just take our word for it. On this trip, you’ll get up close to the floating food markets in Bangkok, explore ornate temples, try your hand at a cooking class and travel by tuk tuk along the bustling streets before you immerse yourself in Bangkok’s legendary nightlife. </p>
+
+  - title: Relax in tropical Thailand
+    content: >
       <p>Then we’ll send you south to the islands. First stop, Phuket. Adventure through sea caves, kayak in blue lagoons and marvel at the limestone cliffs that surround you. After all that activity, you might be in need of some rest and relaxation, and lucky for you, your last stop is dreamy Khao Lak where pristine beaches and  crystal clear waters await. Take a boat trip out to sea and snorkel among the tropical fish. Lush nature is also on the cards with a bamboo rafting trip through the jungle where you’ll feel the spray of the majestic waterfalls. </p>
 
   - title: Choose your travel partner
@@ -24,7 +27,8 @@ journey:
       <p>Social distancing has meant some of us have been away from our loved ones for the longest periods of our lives. Now that we can safely be together again, we want to know who you would choose to spend this once in a lifetime experience with? Perhaps an adventurous parent who’s always dreamed of travelling to Thailand, or a budding young photography friend who has some serious talent to show off? Maybe it’s someone who lives halfway around the world who you haven’t seen for years and you want to reunite in one of the greatest places on earth?</p>
 
   - title: The time has come
-    content: Thailand is more than ready to welcome guests back, and after a period of no travel, it’s arguably more beautiful than ever. The beaches are sparse and plentiful, making it easy to feel like you have them to yourself. This November Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+    content: >
+      <p>Thailand is more than ready to welcome guests back, and after a period of no travel, it’s arguably more beautiful than ever. The beaches are sparse and plentiful, making it easy to feel like you have them to yourself. This November Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
 
 form-cta:
@@ -74,12 +78,10 @@ form:
 
 {% include page/banner.html %}
 
-<div class="container vpad--xxl text--center">
-  <div class="container container--xxl">
-    {{page.intro}}
-  </div>
+<div class="container container--xxl vpad--xxl text--center">
+  {{page.intro}}
 
-  <div class="space--lg"></div>
+  <div class="space--xl"></div>
 
   <div class="journey__before"></div>
   <div class="journey">
@@ -91,7 +93,7 @@ form:
       <div class="step__text">
         <h4 class="h h--sm">{{item.title}}</h4>
         <div class="space--xxs"></div>
-        <span class="text--medium">{{item.content}}</span>
+        <span class="text--medium p--xl">{{item.content}}</span>
       </div>
     </div>
     {% endfor %}
