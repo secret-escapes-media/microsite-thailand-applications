@@ -20,7 +20,7 @@
     justify-content: center;
   }
 
-  @include bp($xl){
+  @include bp($xxl){
     &__left,
     &__right {
       display: block;
@@ -32,17 +32,17 @@
       opacity: 1;
       .video-playing & { opacity: 0.5; }
     }
-    &__left { right: 50%; margin-right: 362px; }
-    &__right { left: 50%; margin-left: 362px; }
+    &__left { right: 50%; margin-right: 400px; }
+    &__right { left: 50%; margin-left: 400px; }
     &__center {
       position: relative;
       z-index: 10;
       margin: auto;
       width: 50%;
-      min-width: 720px;
-      max-width: 960px;
+      min-width: $xl;
+      max-width: $xxxl;
       @include page-padding;
-      .video-playing & { width: 75%; }
+      .video-playing & { width: 82.5%; }
     }
   }
 
@@ -104,7 +104,7 @@
     &-play {
       @include transition;
       transform: scale(1);
-      width: 50%;
+      width: 40%;
       max-width: 240px;
       background-image: url('../img/icons/play.svg');
       @include background-attributes;
