@@ -55,7 +55,7 @@ modalLaunchBtn.on('click', function(event) {
 });
 
 // launches modal from url queryString
-var modalQueryString = 'open-modal';
+var modalQueryString = 'modal';
 if (getQueryStringByName(modalQueryString)) {
   // find modal id & dom element
   var modalId = getQueryStringByName(modalQueryString);

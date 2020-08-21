@@ -16,13 +16,13 @@ intro: >
 
 journey:
 
-  - title: Your adventure begins in Bangkok
+  - title: Your adventure begins
     content: >
-      <p>There’s a reason why Thailand is such a well-loved travel destination, but don’t just take our word for it. On this trip, you’ll get up close to the floating food markets in Bangkok, explore ornate temples, try your hand at a cooking class and travel by tuk tuk along the bustling streets before you immerse yourself in Bangkok’s legendary nightlife. </p>
+      <p>There’s a reason why Thailand is such a well-loved travel destination, but don’t just take our word for it. On this trip, you’ll get up close to the floating food markets, explore ornate temples, try your hand at a cooking class and travel by tuk tuk along the bustling streets.</p>
 
-  - title: Relax in tropical Thailand
+  - title: A journey of discovery
     content: >
-      <p>Then we’ll send you south to the islands. First stop, Phuket. Adventure through sea caves, kayak in blue lagoons and marvel at the limestone cliffs that surround you. After all that activity, you might be in need of some rest and relaxation, and lucky for you, your last stop is dreamy Khao Lak where pristine beaches and  crystal clear waters await. Take a boat trip out to sea and snorkel among the tropical fish. Lush nature is also on the cards with a bamboo rafting trip through the jungle where you’ll feel the spray of the majestic waterfalls. </p>
+      <p>Then we'll depart the bustling cities and discover the natural wonders of Thailand. Swim through sea caves, kayak in blue lagoons and marvel at the limestone cliffs. After all the activity you might be in need of some rest and relaxation. Lucky for you Thailand is the perfect place to recline on a sun-soaked beach and let the worries of the world float away.</p>
 
   - title: Choose your travel partner
     content: >
@@ -30,14 +30,14 @@ journey:
 
   - title: Welcome
     content: >
-      <p>Thailand is more than ready to welcome guests back, and after a period of no travel, it’s arguably more beautiful than ever. The beaches are sparse and plentiful, making it easy to feel like you have them to yourself. This November we’ll be jetting you and your travel buddy off to this incredible country for some much-needed winter sun and adventure. </p>
+      <p>Thailand is eager to welcome guests back, and after a period of no travel, it’s arguably more beautiful than ever. The beaches are sparse and plentiful, making it easy to feel like you have them to yourself. When the time is right we’ll be jetting you and your travel buddy off to this incredible country for some much-needed winter sun and adventure.</p>
 
 
 form-cta:
   title: Thailand is waiting
   content: >
     <p class="p--xxl">Are you ready to discover the very best of Thailand? Start your entry below and then upload your short video recording to be in to win this trip of a lifetime. </p>
-    <p class="p--xxl ">Remember, all we'd like to know is; what excites you most about Thailand? And who would you bring on this trip of a lifetime and why?</p>
+    <p class="p--xxl ">Remember, we'd like to know; what excites you most about Thailand? And who would you bring on this trip of a lifetime and why?</p>
 
 form:
   id: comp
@@ -105,40 +105,21 @@ form:
 
   <div class="space--lg"></div>
 
-  <div class="container container--xl text--center" id="enter">
+  <div class="width width--xl text--center" id="enter">
     <h4 class="h h--lg">{{page.form-cta.title}}</h4>
     {{page.form-cta.content}}
     <div class="space--md"></div>
 
-    <div id="entry-form" class="vpad--md">
-      {% assign form = page.form %}
-      <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
-        {% include form/messages.html %}
-        <div class="form__content width width--md">
-          {% for item in form.fields %}
-            <div class="form__input js-form-input">
-              {% case item.type %}
-                {% when 'text' %}
-                  {% include form/text.html data=item %}
-                {% when 'text-long' %}
-                  {% include form/text-long.html data=item %}
-                {% when 'email' %}
-                  {% include form/email.html data=item %}
-                {% when 'radio' %}
-                  {% include form/radio.html data=item %}
-                {% when 'checkbox' %}
-                  {% include form/checkbox.html data=item %}
-                {% when 'select' %}
-                  {% include form/select.html data=item %}
-              {% endcase %}
-            </div>
-          {% endfor %}
-          <div class="space--sm"></div>
-          <p class="text--sm text--normal">{{form.terms}}</p>
-          <div class="space--sm"></div>
-          <button type="submit" class="btn" disabled>{{form.submit}}</button>
-        </div>
-      </form>
+    <!-- Exavault -->
+    <div class="space--md"></div>
+    <script src="https://secretescapes.exavault.com/ev-receive-widget"></script>
+    <div id='widget-container-wrap' data-hash="24db3-f54snurb"></div>
+
+    <div id="ev-form-complete" style="display: none;">
+      <div class="h h--sm">You’ve successfully entered. Good luck!</div>
+      <p>Feeling inspired to escape a little sooner? We have many luxury escapes waiting to be discovered!</p>
+      <div class="space--md"></div>
+      <a href="https://www.secretescapes.com/" class="btn">View current sales</a>
     </div>
 
   </div>

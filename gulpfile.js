@@ -27,7 +27,7 @@ function browserSyncServe() {
     server: {
       baseDir: '_site/',
       routes: {
-        '/uk/2020/thailand-lp': '_site/'
+        '/uk/2020/thailand': '_site/'
       }
     }
   });

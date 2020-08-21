@@ -7,12 +7,9 @@ $(document).ready(function(){
   },500);
 });
 
-
-
 if (getQueryStringByName('fromApp')) {
   $('body').addClass('fromApp');
 }
-
 
 
 ///////////////////////////////////////
@@ -38,17 +35,22 @@ if (getQueryStringByName('video')) {
 
 
 
-
 ///////////////////////////////////////
-//    Animate SVG paths
+//    Form hide on success
 ///////////////////////////////////////
 
-// var path = $('.banner__window-path');
-// $('.banner__window-path').each(function(){
-//   var length = this.getTotalLength();
-//   $(this).css({ 'stroke-dasharray': length });
-//   $(this).css({ 'stroke-dashoffset': length });
-// });
-
-
-
+$('#widget-container-wrap').click(function(){
+  // click within form container
+  var checkComplete = setInterval(function(){
+    // delay for css change to be applied
+    if( $('.message-wrap:visible').length == 1 ){
+      // if message shows, upload complete
+      // hide form except for upload box
+      $("#ev-widget-form .row:not(:last)").hide();
+      // show complete message
+      $("#ev-form-complete").show();
+      // stop checkComplete
+      clearInterval(checkComplete);
+    }
+  },500);
+});
