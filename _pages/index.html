@@ -8,8 +8,13 @@ title: Thailand | Real people, real journeys
 
 
 intro: >
-  <p class="p--xxxl ">We want to showcase the wonders of the ultimate Secret Escape to Thailand through the eyes of the traveller, and we want YOU to experience it! We are looking for a passionate travelling duo to send on holiday with a small film crew. You will get to taste, meet, see, feel, LIVE the very best of Thailand.</p>
-  <p class="p--xxxl ">All you need to do to enter is record a short video telling us what excites you most about Thailand? And who would you bring on this trip of a lifetime and why?</p>
+  <p class="p--xxl ">We want to showcase the wonders of the ultimate Secret Escape to Thailand through the eyes of the traveller, and we want YOU to experience it! We are looking for a passionate travelling duo to send on holiday with a small film crew. You will get to taste, meet, see, feel, LIVE the very best of Thailand.</p>
+  <hr class="hr--center">
+  <p class="p--xxxxl ">To enter, record a short video telling us: </p>
+  <p class="p--xxxxl text--bold">
+    1. What excites you most about Thailand? <br />
+    2. Who would you bring on this trip of a lifetime and why?
+  </p>
   <div class="space--md"></div>
   <a href="#enter" class="btn">Enter now</a>
 
@@ -36,37 +41,12 @@ journey:
 form-cta:
   title: Thailand is waiting
   content: >
-    <p class="p--xxl">Are you ready to discover the very best of Thailand? Start your entry below and then upload your short video recording to be in to win this trip of a lifetime. </p>
-    <p class="p--xxl ">Remember, we'd like to know; what excites you most about Thailand? And who would you bring on this trip of a lifetime and why?</p>
-
-form:
-  id: comp
-  post-url: "#getFormUrl"
-  expiry-date: 2050-01-01
-  fields:
-    - id: name
-      type: text
-      label: Name
-      required: true
-    - id: email
-      type: email
-      label: Email
-      required: true
-    - id: qualify
-      type: radio
-      label: Are you a UK resident and over the age of 18?
-      required: true
-      options:
-        - id: qualify-true
-          label: 'Yes'
-          value: 'yes'
-        - id: qualify-false
-          label: 'No'
-          value: 'no'
-          invalid: true
-  submit: Upload video & complete entry
-  terms: >
-    By submitting your entry, you agree to the <a href="#" class="js-open-modal link--underlined" data-open-modal="competition-terms">terms and conditions</a> of this competition
+    <p class="p--xxl">To be in to win this trip of a lifetime submit your video below telling us:</p>
+    <p class="p--xxl text--bold">
+      What excites you most about Thailand?<br />
+      Who would you bring on this trip of a lifetime and why?
+    </p>
+    <p class="p--xxl">Enter now!</p>
 
 ---
 
@@ -82,7 +62,9 @@ form:
 {% include page/banner.html %}
 
 <div class="container container--xxl vpad--xxl text--center">
-  {{page.intro}}
+  <div class="width width--xl">
+    {{page.intro}}
+  </div>
 
   <div class="space--xl"></div>
 
